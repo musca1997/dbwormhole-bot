@@ -31,6 +31,8 @@ def get_group():
         for i in group_description:
             text = text + i
     group_data = group_title + '\n' + douban_url + '\n' + text
+    group_data = group_data.replace('https://', '')
+    print group_data
     app = doubanrobot.DoubanRobot(email, dou_password)
     app.talk_status(group_data)
     time.sleep(3600)
@@ -59,6 +61,8 @@ def get_site():
         for i in group_description:
             text = text + i
     group_data = group_title + '\n' + douban_url + '\n' + text
+    group_data = group_data.replace('https://', '')
+    print group_data
     app = doubanrobot.DoubanRobot(email, dou_password)
     app.talk_status(group_data)
     time.sleep(3600)
@@ -88,6 +92,7 @@ def get_list():
         for i in group_description:
             text = text + i
     group_data = group_title + '\n' + douban_url + '\n' + text
+    group_data = group_data.replace('https://', '')
     app = doubanrobot.DoubanRobot(email, dou_password)
     app.talk_status(group_data)
     time.sleep(3600)
